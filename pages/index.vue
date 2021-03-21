@@ -20,7 +20,7 @@
       </v-col>
       <v-col cols="12">
         <v-btn
-          @click="confirmationMessage = 'Thank you for using KGApp, you will be notified when a Karang Guni is available to collect your item'"
+          @click="showConfirmationMessage()"
           color="primary" block style="height: 40px; margin-top: -16px;">
           Submit
         </v-btn>
@@ -33,21 +33,18 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
-  data() {
+  data () {
     return {
       email: '',
       address: '',
-      confirmationMessage: '',
+      confirmationMessage: ''
     }
   },
-  method: {}
+  methods: {
+    showConfirmationMessage() {
+      this.confirmationMessage = 'Thank you for using KGApp, you will be notified when a Karang Guni is available to collect your item'
+    }
+  }
 }
 </script>
