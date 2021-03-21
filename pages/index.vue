@@ -26,7 +26,14 @@
         </v-btn>
       </v-col>
       <v-col cols="12">
-        {{ confirmationMessage }}
+        <v-alert
+          dense
+          text
+          v-if="confirmationMessage !== ''"
+          type="success"
+        >
+          {{ confirmationMessage }}
+        </v-alert>
       </v-col>
     </v-row>
   </v-container>
@@ -43,7 +50,7 @@ export default {
   },
   methods: {
     showConfirmationMessage() {
-      this.confirmationMessage = 'Thank you for using KGApp, you will be notified when a Karang Guni is available to collect your item'
+      this.confirmationMessage = 'Thank you for using KGApp, you will be notified when a Karang Guni is available to collect your item.'
     }
   }
 }
